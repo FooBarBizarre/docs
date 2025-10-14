@@ -1,33 +1,69 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Eldra API"
+description: "Dokumentation för Eldras öppna API"
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  Att använda våra APIer kräver att man har ett konto i vårt system. Det kan sättas upp genom att kontakta oss på [info@eldra.ai](mailto:info@eldra.ai)
 </Note>
 
-## Welcome
+## Välkommen!
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+Genom våra öppna apier kan man bygga sin egen integration med Eldra. \
+Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera in vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Integration med affärs/planerings-system
 
-## Authentication
+Genom våra apier kan man bygga sin egen integration med Eldra. \
+\
+Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera in vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Datastruktur
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+<Info>
+  Denna sektion är en övergripande beskrivning av hur data struktureras i Eldras system. Den finns til lför att underlätta integrationer och sammarbeten.
+</Info>
+
+Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är inte all data som finns i Eldra men beskriver minsta möjliga data för att komma igång. Det kan ses som en bra startpunkt i ett integrationsarbete.
+
+| Entitet                 | Beskrivning                                                                                        | Behöver Entitet      |
+| ----------------------- | -------------------------------------------------------------------------------------------------- | -------------------- |
+| Client                  | Kund. Håller data om en kund: Namn, Nummer, Personnummer, ExterntId (ID i affärs/planeringssystem) |                      |
+| Account                 | Konto. Håller data om en användare i systemet. Namn, Telefonnummer, Email                          |                      |
+| PhoneCall               | Samtals. Håller data om ett telefonsamtal: Start, Slut, Från, Till, Sammanfattning                 | ClientId / AccountId |
+| PhoneCallTranscriptLine | Varje meddelande från client/account och AI-agent.                                                 | PhoneCall            |
+
+## Autentisering
+
+Alla anrop kräver två http headers för att autentisera anropet. Content-Type bör också defineras för bästa upplevelse.
+
 ```
+X-Portal-Id: '{portalId}'
+Authorization: 'Bearer {token}'
+Content-Type: 'application/json'
+```
+
+1. X-Portal-Id
+   1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för använder går att hämta genom anrop till /me
+1. Authorization
+   1. Standard http header för autentisering. Token kan skapas för en användare under inställningar i gränssnittet (https://app.eldra.ai/settings)
+
+### Kom igång
+
+<Accordion title="Autentisering" icon="user">
+  Skapa en token för din användare under inställningar: https://app.eldra.ai/settings 
+
+  Där kan du även se alla portal-ID som din användare har tillgång till. 
+
+  Skicka sedan med följade headers i alla anrop:
+
+  ```
+  X-Portal-Id: '{portalId}'
+  Authorization: 'Bearer {token}'
+  Content-Type: 'application/json'
+  ```
+</Accordion>
+
+<Accordion title="Upptäck våra gränssnitt" icon="sparkles">
+  Till vänster i denna sida kan du se alla våra gränssnitt. Tryck på respektive gränssnitt för att lära dig mer
+</Accordion>
