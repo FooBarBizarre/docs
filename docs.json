@@ -14,7 +14,7 @@
         "tab": "Hjälp",
         "groups": [ 
           {
-            "group": "Getting started",
+            "group": "Kom igång",
             "pages": [
               "index"
             ]
@@ -22,7 +22,7 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API",
         "groups": [
           {
             "group": "API dokumentation",

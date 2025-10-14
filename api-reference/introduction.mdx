@@ -7,25 +7,93 @@ description: "Dokumentation för Eldras öppna API"
   Att använda våra APIer kräver att man har ett konto i vårt system. Det kan sättas upp genom att kontakta oss på [info@eldra.ai](mailto:info@eldra.ai)
 </Note>
 
-## Välkommen!
+## Välkommen till Eldras API-dokumentation
 
 Genom våra öppna apier kan man bygga sin egen integration med Eldra. \
 Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera in vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
 
+## Specialbyggda integrationer 
+
+Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För att komma igång behövs bara två API-gränssnitt:
+
+<Accordion title="Hämta alla kunder">
+  Eldra synkar kundregister från systemet varje natt. På så sätt har alla, och rätt kunder alltid tillgång till Eldra. \
+  Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som skrivet nedan:
+
+  ```
+  {
+  	"name": "string", // Can be firstName, lastName as well
+  	"phonenumber": "string",
+  	"id": "string", // Can be integer as well. Will be used when calling back into integrating system
+  	"street": "string",
+  	"city": "string",
+  	"postalCode": "string"
+  }
+  ```
+</Accordion>
+
+<Accordion title="Hämta aktuellt schema">
+  Eldra hämtar schemat för en kund vid start för ett samtal. Schemat bör alltid vara uppdaterat så att kunden får rätt information. 
+
+  Vi förväntar oss att skicka in följande paramterar. Det kan även skickas in i queryparameterar i anropet:
+
+  ```
+  {
+  	"startDate": Date, // start date for schedule range, e.g right now
+  	"endDate": Date, // end date for schedule range, e.g in three days
+  	"clientId": "string", // Or number
+  }
+  ```
+
+  Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som nedan:
+
+  ```
+  {
+  	"startDate": Date,
+  	"endDate": Date
+  	"type": "string" // name of task, e.g. "Hemmets skötsel"
+  	"by": "string" // name of the person scheduled to do the task
+  	"status": "string" // indicating if the appointment is cancelled or active
+  }
+  ```
+</Accordion>
+
+För bättre upplevelse för personalen kan Eldra även anropa följande API-gränssnitt
+
+<Accordion title="Skapa arbetsanteckning">
+  Eldra skickar på personalens begäran under ett samtal in en arbetsanteckning på en specifik kund. Följande data bör kunnas skickas in:
+
+  ```
+  {
+  	"message": "string" // the actual working note
+  	"by": "string" // either Eldra, or the staff name
+  	"clientId": "string" // Or number
+  }
+  ```
+</Accordion>
+
+<Accordion title="Hämta kunskapsbas">
+  Eldra kan under samtal med personal svara på frågor om rutiner och processer hos företaget. Exempelvis vad man ska göra om ingen svarar när man plingar på, om man har fått punka, eller hur man sjukskriver sig. 
+
+  Vi förväntar oss att kunna hämta filer, eller rå text, på ett strukturerat sätt. Det kan vara genom API-anrop, eller genom nedladdningar från URLer. 
+</Accordion>
+
 ## Datastruktur
 
 <Info>
-  Denna sektion är en övergripande beskrivning av hur data struktureras i Eldras system. Den finns til lför att underlätta integrationer och sammarbeten.
+  Denna sektion är en övergripande beskrivning av hur data struktureras i Eldras system. Den finns till för att underlätta integrationer och sammarbeten.
 </Info>
 
 Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är inte all data som finns i Eldra men beskriver minsta möjliga data för att komma igång. Det kan ses som en bra startpunkt i ett integrationsarbete.
 
-| Entitet                 | Beskrivning                                                                                        | Behöver Entitet      |
-| ----------------------- | -------------------------------------------------------------------------------------------------- | -------------------- |
-| Client                  | Kund. Håller data om en kund: Namn, Nummer, Personnummer, ExterntId (ID i affärs/planeringssystem) |                      |
-| Account                 | Konto. Håller data om en användare i systemet. Namn, Telefonnummer, Email                          |                      |
-| PhoneCall               | Samtals. Håller data om ett telefonsamtal: Start, Slut, Från, Till, Sammanfattning                 | ClientId / AccountId |
-| PhoneCallTranscriptLine | Varje meddelande från client/account och AI-agent.                                                 | PhoneCall            |
+| Entitet                 | Beskrivning                                              | Behöver Entitet      |
+| ----------------------- | -------------------------------------------------------- | -------------------- |
+| Organisation            | Övergripande entitet där alla andra entiteter kopplas in |                      |
+| Portal                  | Entitet där kunder och konton kopplas in                 | Organisation         |
+| Client                  | Representerar en kund                                    | Portal               |
+| Account                 | Representere en användare i systemet                     | Portal, Organisation |
+| PhoneCall               | Ett samtal mellan kund eller användare och Eldra AI      | Client / Account     |
+| PhoneCallTranscriptLine | Varje meddelande från kund eller användare och Eldra AI  | PhoneCall            |
 
 ## Autentisering
 
