@@ -61,7 +61,11 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
 För bättre upplevelse för personalen kan Eldra även anropa följande API-gränssnitt
 
 <Accordion title="Skapa arbetsanteckning">
-  Eldra skickar på personalens begäran under ett samtal in en arbetsanteckning på en specifik kund. Följande data bör kunnas skickas in:
+  Eldra kan efter ett samtal mellan en klient och Eldras AI skapa en arbetsanteckning i ert system. Detta underlätter för personalen då dom kan fortsätta kolla på samma ställe dom gör idag. \
+  \
+  Eldra kan även skicka in arbetsantekcning på begäran under ett samtal med personal.\
+  \
+  Följande data bör kunnas skickas in:
 
   ```
   {
@@ -97,33 +101,21 @@ Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är in
 
 ## Autentisering
 
-Alla anrop kräver två http headers för att autentisera anropet. Content-Type bör också defineras för bästa upplevelse.
-
-```
-X-Portal-Id: '{portalId}'
-Authorization: 'Bearer {token}'
-Content-Type: 'application/json'
-```
-
-1. X-Portal-Id
-   1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för använder går att hämta genom anrop till /me
-1. Authorization
-   1. Standard http header för autentisering. Token kan skapas för en användare under inställningar i gränssnittet (https://app.eldra.ai/settings)
-
 ### Kom igång
 
 <Accordion title="Autentisering" icon="user">
-  Skapa en token för din användare under inställningar: https://app.eldra.ai/settings 
-
-  Där kan du även se alla portal-ID som din användare har tillgång till. 
-
-  Skicka sedan med följade headers i alla anrop:
+  Alla anrop kräver två http headers för att autentisera anropet. Content-Type bör också defineras för bästa upplevelse.
 
   ```
   X-Portal-Id: '{portalId}'
   Authorization: 'Bearer {token}'
   Content-Type: 'application/json'
   ```
+
+  1. X-Portal-Id
+     1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för använder går att hämta genom anrop till /me, samt under inställningar (https://app.eldra.ai/settings)
+  1. Authorization
+     1. Standard http header för autentisering. Token kan skapas för en användare under inställningar i gränssnittet (https://app.eldra.ai/settings)
 </Accordion>
 
 <Accordion title="Upptäck våra gränssnitt" icon="sparkles">
