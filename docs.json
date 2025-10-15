@@ -11,12 +11,23 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Hjälp",
+        "tab": "Start",
         "groups": [ 
           {
             "group": "Kom igång",
             "pages": [
               "index"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Hjälp",
+        "groups": [
+          {
+            "group": "Hjälpcenter för Eldra",
+            "pages": [
+              "help/introduction"
             ]
           }
         ]
