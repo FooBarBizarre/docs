@@ -25,9 +25,32 @@
         "tab": "Hjälp",
         "groups": [
           {
-            "group": "Hjälpcenter för Eldra",
+            "group": "Kom igång",
             "pages": [
-              "help/introduction"
+              "help/introduction",
+              "help/getting-started"
+            ]
+          },
+          {
+            "group": "För olika användare",
+            "pages": [
+              "help/for-clients",
+              "help/for-staff"
+            ]
+          },
+          {
+            "group": "Funktioner",
+            "pages": [
+              "help/phone-calls",
+              "help/work-notes",
+              "help/schedules",
+              "help/knowledge-base"
+            ]
+          },
+          {
+            "group": "Konfiguration",
+            "pages": [
+              "help/settings"
             ]
           }
         ]
