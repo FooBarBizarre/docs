@@ -10,7 +10,7 @@ description: "Dokumentation för Eldras öppna API"
 ## Välkommen till Eldras API-dokumentation
 
 Genom våra öppna apier kan man bygga sin egen integration med Eldra. \
-Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera in vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
+Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
 
 ## Specialbyggda integrationer
 
@@ -90,14 +90,14 @@ För bättre upplevelse för personalen kan Eldra även anropa följande API-gr�
 
 Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är inte all data som finns i Eldra men beskriver minsta möjliga data för att komma igång. Det kan ses som en bra startpunkt i ett integrationsarbete.
 
-| Entitet                 | Beskrivning                                              | Behöver Entitet      |
-| ----------------------- | -------------------------------------------------------- | -------------------- |
-| Organisation            | Övergripande entitet där alla andra entiteter kopplas in |                      |
-| Portal                  | Entitet där kunder och konton kopplas in                 | Organisation         |
-| Client                  | Representerar en kund                                    | Portal               |
-| Account                 | Representere en användare i systemet                     | Portal, Organisation |
-| PhoneCall               | Ett samtal mellan kund eller användare och Eldra AI      | Client / Account     |
-| PhoneCallTranscriptLine | Varje meddelande från kund eller användare och Eldra AI  | PhoneCall            |
+| Entitet                 | Beskrivning                                                                      | Behöver Entitet      |
+| ----------------------- | -------------------------------------------------------------------------------- | -------------------- |
+| Organisation            | Övergripande entitet där alla andra entiteter kopplas in                         |                      |
+| Portal                  | Entitet där kunder och konton kopplas in, exempelvis en enhet i er organisation. | Organisation         |
+| Client                  | Representerar en kund (brukare)                                                  | Portal               |
+| Account                 | Representerar en användare (personal) i systemet                                 | Portal, Organisation |
+| PhoneCall               | Ett samtal mellan kund eller användare och Eldra AI                              | Client / Account     |
+| PhoneCallTranscriptLine | Varje meddelande från kund eller användare och Eldra AI                          | PhoneCall            |
 
 ## Autentisering
 
@@ -113,7 +113,7 @@ Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är in
   ```
 
   1. X-Portal-Id
-     1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för använder går att hämta genom anrop till /me, samt under inställningar (https://app.eldra.ai/settings)
+     1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för användaren går att hämta genom anrop till /me, samt under inställningar (https://app.eldra.ai/settings)
   1. Authorization
      1. Standard http header för autentisering. Token kan skapas för en användare under inställningar i gränssnittet (https://app.eldra.ai/settings)
 </Accordion>
