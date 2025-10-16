@@ -7,6 +7,10 @@ description: "Använd Eldras kunskapsbas för rutiner, processer och information
 
 Eldras kunskapsbas är er organisations samlade kunskap och information som Eldra har tillgång till. Det kan vara rutiner, processer, policyer, kontaktinformation och annat som är användbart i det dagliga arbetet.
 
+<Info>
+  En del av funktionaliteten i kunskapsbasen är i beta-läge och ännu inte släppt för allmän tillgång. Håll koll på våra nyhetsbrev för att få reda på när all funktionalitet är tillgänglig.
+</Info>
+
 ## För personal
 
 ### Fråga Eldra om rutiner
@@ -16,21 +20,18 @@ Personal kan ringa Eldra och få svar på frågor direkt istället för att leta
 **Exempel på frågor:**
 
 <CardGroup cols={2}>
-<Card title="Rutiner" icon="list-check">
-  "Vad är rutinen när en klient inte öppnar dörren?"
-</Card>
-
-<Card title="Processer" icon="diagram-project">
-  "Hur sjukanmäler jag mig?"
-</Card>
-
-<Card title="Information" icon="info-circle">
-  "Vad är kontaktuppgifterna till IT-supporten?"
-</Card>
-
-<Card title="Policyer" icon="file-contract">
-  "Vad är policyn för hantering av nyckel?"
-</Card>
+  <Card title="Rutiner" icon="list-check">
+    "Vad är rutinen när en klient inte öppnar dörren?"
+  </Card>
+  <Card title="Processer" icon="diagram-project">
+    "Hur sjukanmäler jag mig?"
+  </Card>
+  <Card title="Information" icon="info-circle">
+    "Vad är kontaktuppgifterna till IT-supporten?"
+  </Card>
+  <Card title="Policyer" icon="file-contract">
+    "Vad är policyn för hantering av nyckel?"
+  </Card>
 </CardGroup>
 
 ### Vanliga ämnen i kunskapsbasen
@@ -82,118 +83,90 @@ Personal kan ringa Eldra och få svar på frågor direkt istället för att leta
 Det enklaste sättet att använda kunskapsbasen är att ringa Eldra:
 
 <Steps>
-<Step title="Ring Eldra">
-  Ring Eldras telefonnummer.
-</Step>
+  <Step title="Ring Eldra">
+    Ring Eldras telefonnummer.
+  </Step>
+  <Step title="Eldra vet vem du är">
+    Du behöver inte identifiera dig. När du ringer från ditt nummer vet Eldra vem du är.
+  </Step>
+  <Step title="Ställ din fråga">
+    Fråga naturligt om det du undrar över.
 
-<Step title="Identifiera dig">
-  Säg ditt namn och att du är personal.
-  
-  **Exempel:** "Hej, det är Johan från hemtjänsten."
-</Step>
+    **Exempel:** "Vad gör jag om en klient inte öppnat dörren?"
+  </Step>
+  <Step title="Få svar">
+    Eldra söker i kunskapsbasen och ger dig svaret.
 
-<Step title="Ställ din fråga">
-  Fråga naturligt om det du undrar över.
-  
-  **Exempel:** "Vad gör jag om en klient har fått fall?"
-</Step>
-
-<Step title="Få svar">
-  Eldra söker i kunskapsbasen och ger dig svaret.
-  
-  <Tip>
-  Om Eldra inte hittar ett exakt svar får du information om vem du ska kontakta istället.
-  </Tip>
-</Step>
-
-<Step title="Följdfrågor">
-  Du kan ställa följdfrågor för att få mer detaljerad information.
-</Step>
-</Steps>
-
-### I portalen
-
-Du kan också söka i kunskapsbasen via webgränssnittet:
-
-<Steps>
-<Step title="Logga in">
-  Gå till [app.eldra.ai](https://app.eldra.ai) och logga in.
-</Step>
-
-<Step title="Öppna kunskapsbasen">
-  Klicka på "Kunskapsbas" i menyn.
-</Step>
-
-<Step title="Sök eller bläddra">
-  - Använd sökfältet för att hitta specifik information
-  - Bläddra bland kategorier
-  - Öppna dokument och läs i detalj
-</Step>
+    <Tip>
+      Om Eldra inte hittar ett exakt svar får du information om vem du ska kontakta istället.
+    </Tip>
+  </Step>
+  <Step title="Följdfrågor">
+    Du kan ställa följdfrågor för att få mer detaljerad information.
+  </Step>
 </Steps>
 
 ## För administratörer
 
 ### Hantera innehåll i kunskapsbasen
 
-Administratörer och utsedda personer kan lägga till och uppdatera innehåll i kunskapsbasen.
+Eldra synkar automatiskt era redan existerande filer efter att uppsatsarbetet har gjorts. I gränssnittet kan man även redigera eller lägga till egna filer. 
 
 #### Lägga till nytt innehåll
 
 <Steps>
-<Step title="Gå till Kunskapsbas">
-  Logga in i portalen och öppna Kunskapsbas.
-</Step>
+  <Step title="Gå till Kunskapsbas">
+    Logga in i portalen och öppna Kunskapsbas.
+  </Step>
+  <Step title="Klicka på Lägg till">
+    Klicka på knappen "Lägg till nytt dokument" eller liknande.
+  </Step>
+  <Step title="Välj format">
+    Välj vilket format du vill använda:
 
-<Step title="Klicka på Lägg till">
-  Klicka på knappen "Lägg till nytt dokument" eller liknande.
-</Step>
+    - **Textdokument** - För rutiner och processer
+    - **FAQ** - För vanliga frågor och svar
+    - **Länk** - För externa resurser
+    - **Fil** - Ladda upp PDF eller annan fil
+  </Step>
+  <Step title="Fyll i information">
+    Ange:
 
-<Step title="Välj format">
-  Välj vilket format du vill använda:
-  - **Textdokument** - För rutiner och processer
-  - **FAQ** - För vanliga frågor och svar
-  - **Länk** - För externa resurser
-  - **Fil** - Ladda upp PDF eller annan fil
-</Step>
-
-<Step title="Fyll i information">
-  Ange:
-  - Titel
-  - Kategori
-  - Innehåll/text
-  - Nyckelord för sökning
-  - Synlighet (vem som kan se innehållet)
-</Step>
-
-<Step title="Publicera">
-  Spara och publicera innehållet. Det blir omedelbart tillgängligt för Eldra och användare.
-</Step>
+    - Titel
+    - Kategori
+    - Innehåll/text
+    - Nyckelord för sökning
+    - Synlighet (vem som kan se innehållet)
+  </Step>
+  <Step title="Publicera">
+    Spara och publicera innehållet. Det blir omedelbart tillgängligt för Eldra och användare.
+  </Step>
 </Steps>
 
 ### Strukturera kunskapsbasen
 
 <Tip>
-**Skapa tydliga kategorier**
+  **Skapa tydliga kategorier**
 
-Organisera innehållet i logiska kategorier så det är lätt att hitta information. Exempel: Arbetsrutiner, Administrativa processer, Policyer, Kontakter.
+  Organisera innehållet i logiska kategorier så det är lätt att hitta information. Exempel: Arbetsrutiner, Administrativa processer, Policyer, Kontakter.
 </Tip>
 
 <Tip>
-**Använd tydliga titlar**
+  **Använd tydliga titlar**
 
-Använd beskrivande titlar som tydligt visar vad dokumentet handlar om. "Rutin vid fall" är bättre än "Fallrutin v2".
+  Använd beskrivande titlar som tydligt visar vad dokumentet handlar om. "Rutin vid fall" är bättre än "Fallrutin v2".
 </Tip>
 
 <Tip>
-**Håll information uppdaterad**
+  **Håll information uppdaterad**
 
-Granska och uppdatera innehållet regelbundet. Markera datum för senaste uppdatering.
+  Granska och uppdatera innehållet regelbundet. Markera datum för senaste uppdatering.
 </Tip>
 
 <Tip>
-**Tänk på olika användare**
+  **Tänk på olika användare**
 
-Skriv så att både erfaren och ny personal förstår. Undvik jargong när det är möjligt.
+  Skriv så att både erfaren och ny personal förstår. Undvik jargong när det är möjligt.
 </Tip>
 
 ### Bästa praxis för innehåll
@@ -258,21 +231,18 @@ Tips för bra vanliga frågor och svar:
 Administratörer kan styra vem som har åtkomst till vad:
 
 <CardGroup cols={2}>
-<Card title="Alla användare" icon="users">
-  Generell information som alla ska ha tillgång till
-</Card>
-
-<Card title="Endast personal" icon="user-nurse">
-  Information specifik för vårdpersonal
-</Card>
-
-<Card title="Administratörer" icon="user-shield">
-  Känslig information eller policyer
-</Card>
-
-<Card title="Specifika grupper" icon="user-group">
-  Information för specifika team eller enheter
-</Card>
+  <Card title="Alla användare" icon="users">
+    Generell information som alla ska ha tillgång till
+  </Card>
+  <Card title="Endast personal" icon="user-nurse">
+    Information specifik för vårdpersonal
+  </Card>
+  <Card title="Administratörer" icon="user-shield">
+    Känslig information eller policyer
+  </Card>
+  <Card title="Specifika grupper" icon="user-group">
+    Information för specifika team eller enheter
+  </Card>
 </CardGroup>
 
 ## Integration med externa källor
@@ -288,7 +258,7 @@ Om ni redan har dokumentation i andra system kan Eldra:
 - Länka till originaldokument för fullständig information
 
 <Info>
-Kontakta [info@eldra.ai](mailto:info@eldra.ai) för att sätta upp integration med era system.
+  Kontakta [info@eldra.ai](mailto:info@eldra.ai) för att sätta upp integration med era system.
 </Info>
 
 ### Uppdatera från URL
@@ -306,21 +276,21 @@ För innehåll som ändras ofta kan ni:
 För att hitta information snabbt:
 
 <Tip>
-**Använd specifika sökord**
+  **Använd specifika sökord**
 
-Sök på specifika termer istället för allmänna. "punktering bil" istället för "bil".
+  Sök på specifika termer istället för allmänna. "punktering bil" istället för "bil".
 </Tip>
 
 <Tip>
-**Filtrera på kategori**
+  **Filtrera på kategori**
 
-Använd kategorifilter för att begränsa sökningen till rätt område.
+  Använd kategorifilter för att begränsa sökningen till rätt område.
 </Tip>
 
 <Tip>
-**Sök på synonymer**
+  **Sök på synonymer**
 
-Om du inte hittar det du söker, pröva andra ord. "sjukfrånvaro" istället för "sjukskrivning".
+  Om du inte hittar det du söker, pröva andra ord. "sjukfrånvaro" istället för "sjukskrivning".
 </Tip>
 
 ### Rekommenderade sökningar
@@ -341,6 +311,7 @@ Administratörer kan se statistik över kunskapsbasen:
 - Frågor som inte fick svar (vad som saknas)
 
 Detta hjälper er att:
+
 - Förbättra innehållet
 - Identifiera kunskapsluckor
 - Prioritera uppdateringar
@@ -348,7 +319,7 @@ Detta hjälper er att:
 ## Vanliga frågor
 
 <Accordion title="Vem kan lägga till innehåll i kunskapsbasen?">
-  Det bestäms av din organisation. Vanligtvis har administratörer, chefer och utsedda super users rättighet att lägga till och redigera innehåll.
+  Administratörer har rätt att ändra, ta bort, och lägga till innehåll i kunskapsbasen.
 </Accordion>
 
 <Accordion title="Hur vet jag om informationen är aktuell?">
@@ -381,19 +352,16 @@ Innehåll för brukare hanteras separat och skräddarsys efter vad som är relev
 ## Nästa steg
 
 <CardGroup cols={2}>
-<Card title="För personal" icon="user-nurse" href="/help/for-staff">
-  Lär dig mer om att använda Eldra som personal
-</Card>
-
-<Card title="Telefonsamtal" icon="phone" href="/help/phone-calls">
-  Hur du ringer och frågar Eldra
-</Card>
-
-<Card title="Arbetsanteckningar" icon="file-lines" href="/help/work-notes">
-  Skapa arbetsanteckningar med Eldra
-</Card>
-
-<Card title="Inställningar" icon="gear" href="/help/settings">
-  Administrera kunskapsbasen under inställningar
-</Card>
+  <Card title="För personal" icon="user-nurse" href="/help/for-staff">
+    Lär dig mer om att använda Eldra som personal
+  </Card>
+  <Card title="Telefonsamtal" icon="phone" href="/help/phone-calls">
+    Hur du ringer och frågar Eldra
+  </Card>
+  <Card title="Arbetsanteckningar" icon="file-lines" href="/help/work-notes">
+    Skapa arbetsanteckningar med Eldra
+  </Card>
+  <Card title="Inställningar" icon="gear" href="/help/settings">
+    Administrera kunskapsbasen under inställningar
+  </Card>
 </CardGroup>

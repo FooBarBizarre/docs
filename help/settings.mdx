@@ -7,23 +7,26 @@ description: "Hantera ditt konto, portaler och inställningar i Eldra"
 
 Inställningar finns i Eldras webportal på [app.eldra.ai/settings](https://app.eldra.ai/settings).
 
+<Info>
+  En del av funktionaliteten i kunskapsbasen är i beta-läge och ännu inte släppt för allmän tillgång. Håll koll på våra nyhetsbrev för att få reda på när all funktionalitet är tillgänglig.
+</Info>
+
 <Steps>
-<Step title="Logga in">
-  Gå till [app.eldra.ai](https://app.eldra.ai) och logga in med dina uppgifter.
-</Step>
+  <Step title="Logga in">
+    Gå till [app.eldra.ai](https://app.eldra.ai) och logga in med dina uppgifter.
+  </Step>
+  <Step title="Öppna inställningar">
+    Klicka på "Inställningar" i menyn eller på ditt namn/profilikon och välj "Inställningar".
+  </Step>
+  <Step title="Välj kategori">
+    Välj den kategori av inställningar du vill hantera:
 
-<Step title="Öppna inställningar">
-  Klicka på "Inställningar" i menyn eller på ditt namn/profilikon och välj "Inställningar".
-</Step>
-
-<Step title="Välj kategori">
-  Välj den kategori av inställningar du vill hantera:
-  - Konto
-  - Portal
-  - Integrationer
-  - API
-  - Team
-</Step>
+    - Konto
+    - Portal
+    - Integrationer
+    - API
+    - Team
+  </Step>
 </Steps>
 
 ## Kontoinställningar
@@ -33,63 +36,28 @@ Inställningar finns i Eldras webportal på [app.eldra.ai/settings](https://app.
 Under Konto kan du hantera din personliga information:
 
 <CardGroup cols={2}>
-<Card title="Profilinformation" icon="user">
-  Namn, e-post, telefonnummer
-</Card>
-
-<Card title="Lösenord" icon="key">
-  Ändra ditt lösenord
-</Card>
-
-<Card title="Språk" icon="language">
-  Välj språk för gränssnittet
-</Card>
-
-<Card title="Notifikationer" icon="bell">
-  Hantera e-post och pushnotiser
-</Card>
+  <Card title="Profilinformation" icon="user">
+    Namn, e-post, telefonnummer
+  </Card>
+  <Card title="Språk" icon="language">
+    Välj språk för gränssnittet
+  </Card>
+  <Card title="Notifikationer" icon="bell">
+    Hantera e-post och pushnotiser
+  </Card>
 </CardGroup>
 
-### Ändra ditt lösenord
-
-<Steps>
-<Step title="Gå till Konto">
-  Öppna Inställningar > Konto.
-</Step>
-
-<Step title="Klicka på Ändra lösenord">
-  Hitta sektionen för lösenord.
-</Step>
-
-<Step title="Ange gammalt och nytt lösenord">
-  - Nuvarande lösenord
-  - Nytt lösenord (minst 8 tecken)
-  - Bekräfta nytt lösenord
-  
-  <Warning>
-  Välj ett starkt lösenord med en blandning av bokstäver, siffror och specialtecken.
-  </Warning>
-</Step>
-
-<Step title="Spara">
-  Klicka på "Spara" för att aktivera det nya lösenordet.
-</Step>
-</Steps>
+### 
 
 ### Notifikationsinställningar
 
 Välj vilka notifikationer du vill få:
 
 **E-postnotifikationer:**
-- Nya meddelanden i systemet
-- Schemaändringar
-- Systemuppdateringar
-- Veckosammanfattning
 
-**Pushnotifikationer (om mobil app finns):**
-- Påminnelser om besök
-- Akuta meddelanden
-- Nya arbetsanteckningar
+- Nya meddelanden i systemet
+- Dagliga sammanfattningar
+- Veckosammanfattning
 
 ## Portalinställningar
 
@@ -98,21 +66,12 @@ Om du är administratör kan du hantera inställningar för hela portalen.
 ### Grundläggande portalinformation
 
 <CardGroup cols={2}>
-<Card title="Portalnamn" icon="building">
-  Namnet på din organisation/enhet
-</Card>
-
-<Card title="Kontaktuppgifter" icon="address-card">
-  Telefonnummer och e-post för support
-</Card>
-
-<Card title="Logotyp" icon="image">
-  Ladda upp er organisations logotyp
-</Card>
-
-<Card title="Färgtema" icon="palette">
-  Anpassa färger i gränssnittet
-</Card>
+  <Card title="Portalnamn" icon="building">
+    Namnet på din organisation/enhet
+  </Card>
+  <Card title="Kontaktuppgifter" icon="address-card">
+    Telefonnummer och e-post för support
+  </Card>
 </CardGroup>
 
 ### Hantera användare
@@ -122,48 +81,43 @@ Administratörer kan lägga till och hantera användare:
 #### Lägga till ny användare
 
 <Steps>
-<Step title="Gå till Team">
-  Öppna Inställningar > Team.
-</Step>
+  <Step title="Gå till Team">
+    Öppna Inställningar \> Team.
+  </Step>
+  <Step title="Klicka på Lägg till användare">
+    Klicka på "Bjud in användare" eller "Lägg till".
+  </Step>
+  <Step title="Fyll i uppgifter">
+    Ange:
 
-<Step title="Klicka på Lägg till användare">
-  Klicka på "Bjud in användare" eller "Lägg till".
-</Step>
-
-<Step title="Fyll i uppgifter">
-  Ange:
-  - Namn
-  - E-postadress
-  - Roll (personal, administratör, etc.)
-  - Behörigheter
-</Step>
-
-<Step title="Skicka inbjudan">
-  Användaren får ett e-postmeddelande med instruktioner för att aktivera kontot.
-</Step>
+    - Namn
+    - E-postadress
+    - Mobilnummer
+    - Roll (personal, administratör, etc.)
+    - Behörigheter
+  </Step>
+  <Step title="Skicka inbjudan">
+    Användaren får ett SMS med instruktioner för att aktivera kontot.
+  </Step>
 </Steps>
 
 #### Användarroller
 
 <Accordion title="Personal">
   Grundläggande behörigheter:
+
   - Ringa Eldra
   - Skapa arbetsanteckningar
   - Se sina egna klienter
   - Använda kunskapsbasen
 </Accordion>
 
-<Accordion title="Teamledare">
-  Utökade behörigheter:
-  - Allt som Personal kan
-  - Se alla klienter i sitt team
-  - Se teamets arbetsanteckningar
-  - Grundläggande rapporter
-</Accordion>
-
 <Accordion title="Administratör">
   Fulla behörigheter:
-  - Allt som Teamledare kan
+
+  - Se alla klienter i sin portal
+  - Se alla arbetsanteckningar
+  - Grundläggande rapporter
   - Hantera användare
   - Hantera kunskapsbas
   - Konfigurera integrationer
@@ -171,55 +125,35 @@ Administratörer kan lägga till och hantera användare:
   - Portalinställningar
 </Accordion>
 
-<Accordion title="Super admin">
-  Högsta behörighetsnivå:
-  - Allt som Administratör kan
-  - Hantera flera portaler
-  - Systemkonfiguration
-  - API-åtkomst
-</Accordion>
-
 ### Hantera klienter
 
 Under Klient-inställningar kan du:
 
-- Importera klienter från fil (CSV, Excel)
-- Lägga till enskilda klienter manuellt
-- Redigera klientinformation
-- Inaktivera/arkivera klienter
+- Importera klienter från fil (CSV)
 - Hantera klientgrupper
 
 #### Importera klienter
 
 <Steps>
-<Step title="Förbered data">
-  Skapa en CSV- eller Excel-fil med kolumner för:
-  - Namn
-  - Telefonnummer
-  - Adress (gata, postnummer, stad)
-  - Personnummer (valfritt)
-  - Anteckningar (valfritt)
-</Step>
+  <Step title="Förbered data">
+    Skapa en CSV-fil enligt instruktionerna i inställningar
+  </Step>
+  <Step title="Gå till Klienter">
+    Öppna Inställningar \> Klienter.
+  </Step>
+  <Step title="Välj Importera">
+    Klicka på "Importera klienter" eller liknande.
+  </Step>
+  <Step title="Ladda upp fil">
+    Välj din fil och mappa kolumnerna till rätt fält.
 
-<Step title="Gå till Klienter">
-  Öppna Inställningar > Klienter.
-</Step>
-
-<Step title="Välj Importera">
-  Klicka på "Importera klienter" eller liknande.
-</Step>
-
-<Step title="Ladda upp fil">
-  Välj din fil och mappa kolumnerna till rätt fält.
-  
-  <Tip>
-  Systemet föreslår automatisk mappning baserat på kolumnnamn.
-  </Tip>
-</Step>
-
-<Step title="Granska och importera">
-  Kontrollera att data ser korrekt ut och klicka på "Importera".
-</Step>
+    <Tip>
+      Systemet föreslår automatisk mappning baserat på kolumnnamn.
+    </Tip>
+  </Step>
+  <Step title="Granska och importera">
+    Kontrollera att data ser korrekt ut och klicka på "Importera".
+  </Step>
 </Steps>
 
 ## Integrationsinställningar
@@ -229,66 +163,62 @@ Konfigurera kopplingar till externa system.
 ### Tillgängliga integrationer
 
 <CardGroup cols={2}>
-<Card title="Planeringssystem" icon="calendar-days">
-  Koppla till ert schema- och planeringssystem
-</Card>
-
-<Card title="Dokumentationssystem" icon="file-lines">
-  Synka arbetsanteckningar till ert dokumentationssystem
-</Card>
-
-<Card title="Kunskapsbas" icon="book">
-  Hämta dokument från SharePoint, Google Drive m.m.
-</Card>
-
-<Card title="Telefoni" icon="phone">
-  Koppla till ert telefonsystem
-</Card>
+  <Card title="Planeringssystem" icon="calendar-days">
+    Koppla till ert schema- och planeringssystem
+  </Card>
+  <Card title="Dokumentationssystem" icon="file-lines">
+    Synka arbetsanteckningar till ert dokumentationssystem
+  </Card>
+  <Card title="Kunskapsbas" icon="book">
+    Hämta dokument från SharePoint, Google Drive m.m.
+  </Card>
+  <Card title="Telefoni" icon="phone">
+    Hantera nummer hos Eldra
+  </Card>
 </CardGroup>
 
 ### Konfigurera integration
 
 <Steps>
-<Step title="Välj integration">
-  Gå till Inställningar > Integrationer och välj det system du vill koppla till.
-</Step>
+  <Step title="Välj integration">
+    Gå till Inställningar \> Integrationer och välj det system du vill koppla till.
+  </Step>
+  <Step title="Ange anslutningsuppgifter">
+    Beroende på system behövs:
 
-<Step title="Ange anslutningsuppgifter">
-  Beroende på system behövs:
-  - API-nyckel eller token
-  - Användarnamn och lösenord
-  - URL till systemet
-  - Organisation/Tenant ID
-</Step>
+    - API-nyckel eller token
+    - Användarnamn och lösenord
+    - URL till systemet
+    - Organisation/Tenant ID
+  </Step>
+  <Step title="Testa anslutning">
+    Klicka på "Testa" för att verifiera att anslutningen fungerar.
 
-<Step title="Testa anslutning">
-  Klicka på "Testa" för att verifiera att anslutningen fungerar.
-  
-  <Check>
-  Om testet lyckas ser du en grön bekräftelse.
-  </Check>
-</Step>
+    <Check>
+      Om testet lyckas ser du en grön bekräftelse.
+    </Check>
+  </Step>
+  <Step title="Aktivera">
+    När testet är lyckat, aktivera integrationen.
+  </Step>
+  <Step title="Konfigurera synkronisering">
+    Välj:
 
-<Step title="Aktivera">
-  När testet är lyckat, aktivera integrationen.
-</Step>
-
-<Step title="Konfigurera synkronisering">
-  Välj:
-  - Vad som ska synkas
-  - Hur ofta (t.ex. var 15:e minut, varje natt)
-  - Riktning (ensidigt eller tvåvägs)
-</Step>
+    - Vad som ska synkas
+    - Hur ofta (t.ex. var 15:e minut, varje natt)
+    - Riktning (ensidigt eller tvåvägs)
+  </Step>
 </Steps>
 
 ### Felsöka integrationer
 
 <Accordion title="Integration fungerar inte">
   Kontrollera:
+
   - Att API-nyckeln är giltig och inte har utgått
   - Att användaruppgifterna är korrekta
   - Att systemet du integrerar med är tillgängligt
-  - Loggar under Integrationer > Loggar för felmeddelanden
+  - Loggar under Integrationer \> Loggar för felmeddelanden
 </Accordion>
 
 <Accordion title="Data synkar inte">
@@ -311,27 +241,24 @@ För tekniskt kunniga användare och utvecklare.
 ### Skapa API-nyckel
 
 <Steps>
-<Step title="Gå till API">
-  Öppna Inställningar > API.
-</Step>
+  <Step title="Gå till API">
+    Öppna Inställningar \> API.
+  </Step>
+  <Step title="Klicka på Skapa nyckel">
+    Klicka på "Skapa ny API-nyckel".
+  </Step>
+  <Step title="Ange namn och behörigheter">
+    - Ge nyckeln ett beskrivande namn
+    - Välj vilka behörigheter nyckeln ska ha
+    - Välj portal som nyckeln gäller för
+  </Step>
+  <Step title="Spara nyckeln säkert">
+    Kopiera API-nyckeln - den visas bara en gång!
 
-<Step title="Klicka på Skapa nyckel">
-  Klicka på "Skapa ny API-nyckel".
-</Step>
-
-<Step title="Ange namn och behörigheter">
-  - Ge nyckeln ett beskrivande namn
-  - Välj vilka behörigheter nyckeln ska ha
-  - Välj portal som nyckeln gäller för
-</Step>
-
-<Step title="Spara nyckeln säkert">
-  Kopiera API-nyckeln - den visas bara en gång!
-  
-  <Warning>
-  Spara nyckeln säkert. Du kan inte se den igen. Om du tappar bort den måste du skapa en ny.
-  </Warning>
-</Step>
+    <Warning>
+      Spara nyckeln säkert. Du kan inte se den igen. Om du tappar bort den måste du skapa en ny.
+    </Warning>
+  </Step>
 </Steps>
 
 ### Använda API-nyckeln
@@ -345,7 +272,7 @@ Content-Type: application/json
 ```
 
 <Info>
-Läs mer i [API-dokumentationen](/api-reference/introduction).
+  Läs mer i [API-dokumentationen](/api-reference/introduction).
 </Info>
 
 ### Hantera API-nycklar
@@ -362,21 +289,18 @@ Administratörer kan se olika rapporter och statistik.
 ### Tillgängliga rapporter
 
 <CardGroup cols={2}>
-<Card title="Samtalsstatistik" icon="phone">
-  Antal samtal, varaktighet, topptider
-</Card>
-
-<Card title="Arbetsanteckningar" icon="file-lines">
-  Antal anteckningar per personal, klient, tidsperiod
-</Card>
-
-<Card title="Användaraktivitet" icon="users">
-  Inloggningar, användning, aktiva användare
-</Card>
-
-<Card title="Kunskapsbasen" icon="book">
-  Mest sökta ämnen, populära dokument
-</Card>
+  <Card title="Samtalsstatistik" icon="phone">
+    Antal samtal, varaktighet, topptider
+  </Card>
+  <Card title="Arbetsanteckningar" icon="file-lines">
+    Antal anteckningar per personal, klient, tidsperiod
+  </Card>
+  <Card title="Användaraktivitet" icon="users">
+    Inloggningar, användning, aktiva användare
+  </Card>
+  <Card title="Kunskapsbasen" icon="book">
+    Mest sökta ämnen, populära dokument
+  </Card>
 </CardGroup>
 
 ### Exportera data
@@ -388,51 +312,20 @@ Du kan exportera data för vidare analys:
 - **Tidsperiod:** Välj specifikt datum eller period
 
 <Note>
-Export av personuppgifter följer GDPR och loggas enligt organisationens rutiner.
+  Export av personuppgifter följer GDPR och loggas enligt organisationens rutiner.
 </Note>
 
 ## Säkerhet och integritet
 
-### Tvåfaktorsautentisering (2FA)
-
-Lägg till extra säkerhet till ditt konto:
-
-<Steps>
-<Step title="Gå till Säkerhet">
-  Öppna Inställningar > Konto > Säkerhet.
-</Step>
-
-<Step title="Aktivera 2FA">
-  Klicka på "Aktivera tvåfaktorsautentisering".
-</Step>
-
-<Step title="Välj metod">
-  - SMS-kod
-  - Autentiseringsapp (Google Authenticator, Authy)
-  - E-postkod
-</Step>
-
-<Step title="Följ instruktionerna">
-  Skanna QR-kod eller ange kod enligt vald metod.
-</Step>
-
-<Step title="Spara återställningskoder">
-  Skriv ner återställningskoderna på ett säkert ställe.
-  
-  <Warning>
-  Om du förlorar tillgång till din 2FA-enhet behöver du dessa koder för att komma in.
-  </Warning>
-</Step>
-</Steps>
+### 
 
 ### Sessionshantering
 
 Se och hantera aktiva sessioner:
 
-- Visa var du är inloggad
-- Se enheter och IP-adresser
+- Visa alla inloggade sessioner
 - Logga ut från alla enheter
-- Logga ut från specifik enhet
+- Logga ut från specifik session
 
 ### Åtkomstlogg
 
@@ -441,12 +334,11 @@ Administratörer kan se:
 - Vilka användare som har loggat in
 - När och från vilken IP
 - Vilka åtgärder som har utförts
-- Eventuella misslyckade inloggningsförsök
 
 ## Vanliga frågor
 
 <Accordion title="Hur byter jag portal?">
-  Om du har tillgång till flera portaler, klicka på portalnamnet i övre högra hörnet och välj den portal du vill byta till.
+  Om du har tillgång till flera portaler, klicka på inställningar i övre högra hörnet och välj den portal du vill byta till.
 </Accordion>
 
 <Accordion title="Kan jag ha flera API-nycklar?">
@@ -474,19 +366,16 @@ Administratörer kan se:
 Om du behöver hjälp med inställningar:
 
 <CardGroup cols={2}>
-<Card title="Support" icon="envelope" href="mailto:info@eldra.ai">
-  Kontakta support på info@eldra.ai
-</Card>
-
-<Card title="Dokumentation" icon="book" href="/api-reference/introduction">
-  Läs API-dokumentationen för tekniska integrationer
-</Card>
-
-<Card title="Videogenomgångar" icon="video">
-  Se instruktionsvideos (om tillgängliga)
-</Card>
-
-<Card title="Intern IT-support" icon="user-headset">
-  Kontakta er egen IT-avdelning för organisationsspecifika frågor
-</Card>
+  <Card title="Support" icon="envelope" href="mailto:info@eldra.ai">
+    Kontakta support på [info@eldra.ai](mailto:info@eldra.ai)
+  </Card>
+  <Card title="Dokumentation" icon="book" href="/api-reference/introduction">
+    Läs API-dokumentationen för tekniska integrationer
+  </Card>
+  <Card title="Videogenomgångar" icon="video">
+    Se instruktionsvideos (om tillgängliga)
+  </Card>
+  <Card title="Intern IT-support" icon="user-headset">
+    Kontakta er egen IT-avdelning för organisationsspecifika frågor
+  </Card>
 </CardGroup>

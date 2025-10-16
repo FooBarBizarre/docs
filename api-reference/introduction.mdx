@@ -21,14 +21,14 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
   Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som skrivet nedan:
 
   ```
-  {
+  [{
   	"name": "string", // Can be firstName, lastName as well
   	"phonenumber": "string",
   	"id": "string", // Can be integer as well. Will be used when calling back into integrating system
   	"street": "string",
   	"city": "string",
   	"postalCode": "string"
-  }
+  }]
   ```
 </Accordion>
 
@@ -48,13 +48,13 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
   Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som nedan:
 
   ```
-  {
-  	"startDate": Date,
-  	"endDate": Date
-  	"type": "string" // name of task, e.g. "Hemmets skötsel"
-  	"by": "string" // name of the person scheduled to do the task
+  [{
+  	"startDate": Date, // start date and time for scheduled appointment
+  	"endDate": Date, // end date and time for scheduled appointment
+  	"type": "string", // name of task, e.g. "Hemmets skötsel"
+  	"by": "string", // name of the person scheduled to do the task
   	"status": "string" // indicating if the appointment is cancelled or active
-  }
+  }]
   ```
 </Accordion>
 

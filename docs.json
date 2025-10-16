@@ -12,7 +12,7 @@
     "tabs": [
       {
         "tab": "Start",
-        "groups": [ 
+        "groups": [
           {
             "group": "Kom igång",
             "pages": [
@@ -43,7 +43,6 @@
             "pages": [
               "help/phone-calls",
               "help/work-notes",
-              "help/schedules",
               "help/knowledge-base"
             ]
           },
@@ -91,15 +90,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
