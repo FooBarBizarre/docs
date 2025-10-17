@@ -4,21 +4,26 @@ description: "Dokumentation för Eldras öppna API"
 ---
 
 <Note>
-  Att använda våra APIer kräver att man har ett konto i vårt system. Det kan sättas upp genom att kontakta oss på [info@eldra.ai](mailto:info@eldra.ai)
+  För att använda våra API:er behöver du ha ett konto i Eldra. Mejla oss gärna på [info@eldra.ai](mailto:info@eldra.ai) så hjälper vi dig igång.
 </Note>
 
 ## Välkommen till Eldras API-dokumentation
 
-Genom våra öppna apier kan man bygga sin egen integration med Eldra. \
-Till partners erbjuder vi specialbyggda integrationer där vi hämtar data från era APIer för att populera vårt system. Kontakta oss på [info@eldra.ai](mailto:info@eldra.ai) för att komma igång med en integration.
+Här hittar du allt du behöver för att bygga en egen integration med Eldra.  
 
-## Specialbyggda integrationer
+Vi samarbetar gärna med partners som vill koppla ihop sina system med vårt – på ett tryggt och smidigt sätt. 
 
-Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För att komma igång behövs bara två API-gränssnitt i systemet vi ska integrera med:
+Vill du komma igång med en integration? Hör av dig till oss på [info@eldra.ai](mailto:info@eldra.ai) 
+
+## Integration mot ditt system
+
+Eldra kan koppla upp sig mot vilket affärs- eller planeringssystem som helst. \
+För att komma igång behövs bara två API-gränssnitt i systemet du vill integrera med:
 
 <Accordion title="Hämta alla kunder">
-  Eldra synkar kundregister från systemet varje natt. På så sätt har alla, och rätt kunder alltid tillgång till Eldra. \
-  Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som skrivet nedan:
+  Eldra synkar kundregistret från systemet varje natt. På så sätt finns alltid rätt kunder tillgängliga – uppdaterade och klara.
+
+    Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
 
   ```
   [{
@@ -33,9 +38,9 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
 </Accordion>
 
 <Accordion title="Hämta aktuellt schema">
-  Eldra hämtar schemat för en kund vid start för ett samtal. Schemat bör alltid vara uppdaterat så att kunden får rätt information. 
+  Eldra hämtar schemat för en kund när ett samtal startar.  Schemat ska vara uppdaterat så att kunden alltid får rätt information.  
 
-  Vi förväntar oss att skicka in följande paramterar. Det kan även skickas in i queryparameterar i anropet:
+  Vi skickar in följande parametrar (det går också bra att skicka dem som queryparametrar):
 
   ```
   {
@@ -45,7 +50,7 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
   }
   ```
 
-  Vi förväntar oss en lista tillbaka med följande data, attributens namn behöver inte vara samma som nedan:
+  Svarslistan bör innehålla följande data:
 
   ```
   [{
@@ -58,14 +63,14 @@ Eldra kan koppla upp sig mot vilket affärs-/planeringssystem som helst. För at
   ```
 </Accordion>
 
-För bättre upplevelse för personalen kan Eldra även anropa följande API-gränssnitt
+För att underlätta vardagen för personalen kan Eldra också anropa följande gränssnitt
 
 <Accordion title="Skapa arbetsanteckning">
-  Eldra kan efter ett samtal mellan en klient och Eldras AI skapa en arbetsanteckning i ert system. Detta underlätter för personalen då dom kan fortsätta kolla på samma ställe dom gör idag. \
-  \
-  Eldra kan även skicka in arbetsantekcning på begäran under ett samtal med personal.\
-  \
-  Följande data bör kunnas skickas in:
+  Efter ett samtal mellan en klient och Eldra kan en arbetsanteckning automatiskt skapas i ert system.  Det gör att personalen kan fortsätta arbeta i samma vy som vanligt.  
+
+  Eldra kan också skapa anteckningar på begäran under ett samtal med personal.
+
+  Följande data skickas in:
 
   ```
   {
@@ -77,34 +82,36 @@ För bättre upplevelse för personalen kan Eldra även anropa följande API-gr�
 </Accordion>
 
 <Accordion title="Hämta kunskapsbas">
-  Eldra kan under samtal med personal svara på frågor om rutiner och processer hos företaget. Exempelvis vad man ska göra om ingen svarar när man plingar på, om man har fått punka, eller hur man sjukskriver sig. 
+  Under samtal med personal kan Eldra svara på frågor om era rutiner och processer.  
 
-  Vi förväntar oss att kunna hämta filer, eller rå text, på ett strukturerat sätt. Det kan vara genom API-anrop, eller genom nedladdningar från URLer. 
+  Exempelvis vad man gör om ingen öppnar dörren, hur man hanterar en punktering – eller hur man sjukanmäler sig.  
+
+  Vi förväntar oss att kunna hämta materialet som filer eller text, via API-anrop eller nedladdningsbara länkar.
 </Accordion>
 
 ## Datastruktur
 
 <Info>
-  Denna sektion är en övergripande beskrivning av hur data struktureras i Eldras system. Den finns till för att underlätta integrationer och sammarbeten.
+  Här beskriver vi hur data struktureras i Eldra – för att underlätta samarbeten och integrationer.
 </Info>
 
-Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är inte all data som finns i Eldra men beskriver minsta möjliga data för att komma igång. Det kan ses som en bra startpunkt i ett integrationsarbete.
+Det här är den grundläggande datamodellen som behövs för att Eldra ska fungera.  Det är inte all data som finns i systemet, men tillräckligt för att du ska kunna komma igång.
 
-| Entitet                 | Beskrivning                                                                      | Behöver Entitet      |
-| ----------------------- | -------------------------------------------------------------------------------- | -------------------- |
-| Organisation            | Övergripande entitet där alla andra entiteter kopplas in                         |                      |
-| Portal                  | Entitet där kunder och konton kopplas in, exempelvis en enhet i er organisation. | Organisation         |
-| Client                  | Representerar en kund (brukare)                                                  | Portal               |
-| Account                 | Representerar en användare (personal) i systemet                                 | Portal, Organisation |
-| PhoneCall               | Ett samtal mellan kund eller användare och Eldra AI                              | Client / Account     |
-| PhoneCallTranscriptLine | Varje meddelande från kund eller användare och Eldra AI                          | PhoneCall            |
+| Entitet                 | Beskrivning                                             | Behöver Entitet      |
+| ----------------------- | ------------------------------------------------------- | -------------------- |
+| Organisation            | Den övergripande enheten där allt hänger ihop           |                      |
+| Portal                  | Enhet i organisationen där kunder och konton kopplas in | Organisation         |
+| Client                  | Representerar en kund (brukare)                         | Portal               |
+| Account                 | Representerar en användare (personal)                   | Portal, Organisation |
+| PhoneCall               | Ett samtal mellan kund eller användare och Eldra AI     | Client / Account     |
+| PhoneCallTranscriptLine | Varje meddelande från kund eller användare och Eldra AI | PhoneCall            |
 
 ## Autentisering
 
 ### Kom igång
 
 <Accordion title="Autentisering" icon="user">
-  Alla anrop kräver två http headers för att autentisera anropet. Content-Type bör också defineras för bästa upplevelse.
+  Alla anrop kräver två HTTP-headrar för autentisering.  Vi rekommenderar också att du sätter Content-Type för bästa upplevelse.
 
   ```
   X-Portal-Id: '{portalId}'
@@ -112,12 +119,16 @@ Datastrukturen som behövs för att Eldra ska fungera beskrivs nedan. Det är in
   Content-Type: 'application/json'
   ```
 
-  1. X-Portal-Id
-     1. ID för portal som anropet ska hantera. Alla ID som finns tillgängliga för användaren går att hämta genom anrop till /me, samt under inställningar (https://app.eldra.ai/settings)
-  1. Authorization
-     1. Standard http header för autentisering. Token kan skapas för en användare under inställningar i gränssnittet (https://app.eldra.ai/settings)
+  **X-Portal-Id **\
+  ID för den portal som anropet gäller. Du hittar alla ID:n du har tillgång till via `/me` eller under Inställningar på [https://app.eldra.ai/settings](https://app.eldra.ai/settings]\(https://app.eldra.ai/settings\))
+
+  **Authorization**: \
+  Standardheader för autentisering. \
+  Token kan skapas under Inställningar i gränssnittet.
 </Accordion>
 
 <Accordion title="Upptäck våra gränssnitt" icon="sparkles">
-  Till vänster i denna sida kan du se alla våra gränssnitt. Tryck på respektive gränssnitt för att lära dig mer
+  Till vänster ser du en lista över alla våra gränssnitt.  
+
+  Klicka på det du vill utforska för att läsa mer.
 </Accordion>
