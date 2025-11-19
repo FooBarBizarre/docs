@@ -9,11 +9,11 @@ description: "Dokumentation för Eldras öppna API"
 
 ## Välkommen till Eldras API-dokumentation
 
-Här hittar du allt du behöver för att bygga en egen integration med Eldra.  
+Här hittar du allt du behöver för att bygga en egen integration med Eldra.
 
-Vi samarbetar gärna med partners som vill koppla ihop sina system med vårt – på ett tryggt och smidigt sätt. 
+Vi samarbetar gärna med partners som vill koppla ihop sina system med vårt – på ett tryggt och smidigt sätt.
 
-Vill du komma igång med en integration? Hör av dig till oss på [info@eldra.ai](mailto:info@eldra.ai) 
+Vill du komma igång med en integration? Hör av dig till oss på [info@eldra.ai](mailto:info@eldra.ai)
 
 ## Integration mot ditt system
 
@@ -23,7 +23,7 @@ För att komma igång behövs bara två API-gränssnitt i systemet du vill integ
 <Accordion title="Hämta alla kunder">
   Eldra synkar kundregistret från systemet varje natt. På så sätt finns alltid rätt kunder tillgängliga – uppdaterade och klara.
 
-    Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
+  Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
 
   ```
   [{
@@ -32,13 +32,14 @@ För att komma igång behövs bara två API-gränssnitt i systemet du vill integ
   	"id": "string", // Can be integer as well. Will be used when calling back into integrating system
   	"street": "string",
   	"city": "string",
-  	"postalCode": "string"
+  	"postalCode": "string",
+  	"unitIdentifier": "string", // Identification for which unit (sv. "Enhet" / "Område") the client belongs to. 
   }]
   ```
 </Accordion>
 
 <Accordion title="Hämta aktuellt schema">
-  Eldra hämtar schemat för en kund när ett samtal startar.  Schemat ska vara uppdaterat så att kunden alltid får rätt information.  
+  Eldra hämtar schemat för en kund när ett samtal startar.  Schemat ska vara uppdaterat så att kunden alltid får rätt information.
 
   Vi skickar in följande parametrar (det går också bra att skicka dem som queryparametrar):
 
@@ -66,7 +67,7 @@ För att komma igång behövs bara två API-gränssnitt i systemet du vill integ
 För att underlätta vardagen för personalen kan Eldra också anropa följande gränssnitt
 
 <Accordion title="Skapa arbetsanteckning">
-  Efter ett samtal mellan en klient och Eldra kan en arbetsanteckning automatiskt skapas i ert system.  Det gör att personalen kan fortsätta arbeta i samma vy som vanligt.  
+  Efter ett samtal mellan en klient och Eldra kan en arbetsanteckning automatiskt skapas i ert system.  Det gör att personalen kan fortsätta arbeta i samma vy som vanligt.
 
   Eldra kan också skapa anteckningar på begäran under ett samtal med personal.
 
@@ -82,9 +83,9 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
 </Accordion>
 
 <Accordion title="Hämta kunskapsbas">
-  Under samtal med personal kan Eldra svara på frågor om era rutiner och processer.  
+  Under samtal med personal kan Eldra svara på frågor om era rutiner och processer.
 
-  Exempelvis vad man gör om ingen öppnar dörren, hur man hanterar en punktering – eller hur man sjukanmäler sig.  
+  Exempelvis vad man gör om ingen öppnar dörren, hur man hanterar en punktering – eller hur man sjukanmäler sig.
 
   Vi förväntar oss att kunna hämta materialet som filer eller text, via API-anrop eller nedladdningsbara länkar.
 </Accordion>
@@ -119,7 +120,7 @@ Det här är den grundläggande datamodellen som behövs för att Eldra ska fung
   Content-Type: 'application/json'
   ```
 
-  **X-Portal-Id **\
+  \*\*X-Portal-Id \*\*\
   ID för den portal som anropet gäller. Du hittar alla ID:n du har tillgång till via `/me` eller under Inställningar på [https://app.eldra.ai/settings](https://app.eldra.ai/settings]\(https://app.eldra.ai/settings\))
 
   **Authorization**: \
@@ -128,7 +129,7 @@ Det här är den grundläggande datamodellen som behövs för att Eldra ska fung
 </Accordion>
 
 <Accordion title="Upptäck våra gränssnitt" icon="sparkles">
-  Till vänster ser du en lista över alla våra gränssnitt.  
+  Till vänster ser du en lista över alla våra gränssnitt.
 
   Klicka på det du vill utforska för att läsa mer.
 </Accordion>
