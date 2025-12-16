@@ -83,11 +83,64 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
 </Accordion>
 
 <Accordion title="Hämta kunskapsbas">
+  
+
   Under samtal med personal kan Eldra svara på frågor om era rutiner och processer.
 
   Exempelvis vad man gör om ingen öppnar dörren, hur man hanterar en punktering – eller hur man sjukanmäler sig.
 
   Vi förväntar oss att kunna hämta materialet som filer eller text, via API-anrop eller nedladdningsbara länkar.
+</Accordion>
+
+**För djupare integrationer där även anhöriga och personal ska kunna ringas krävs följande gränssnitt:**
+
+<Accordion title="Hämta alla anhöriga">
+  Eldra synkar anhöriga från systemet varje natt. På så sätt kan anhöriga till kunder alltid få rätt information.
+
+  Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
+
+  ```
+  [{
+  	"name": "string", // Can be firstName, lastName as well
+  	"phonenumber": "string",
+  	"id": "string", // Can be integer as well.
+  	"clientId": "string" // Which client they are a relative of. Can be integer as well
+  	"relationship": "string" // How they are related to the client. Not required to exists
+  }]
+  ```
+</Accordion>
+
+<Accordion title="Hämta all personal">
+  Eldra synkar personal från systemet varje natt. På så sätt kan all personal alltid få kontakt och hjälp av Eldra. 
+
+  Vi skiljer på endpointsen för att hämta personal, och telefonnummer för personal, då dom flesta hemtjänstutförarna jobbar med en pool av telefoner som man tar när man börjar jobba. Därför håller vi en lista över både personal, och en lista över telefonnummer. Om ert system alltid kopplar 1-1 mellan personal och nummer kan vi hantera allt i ett anrop till ert system
+
+  Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
+
+  ```
+  [{
+  	"name": "string", // Can be firstName, lastName as well
+  	"phonenumber": "string", // If they have a set phonenumber, should match phonenumers returned in "Fetch all staff numbers". Can be null / empty
+  	"email": "string", // can be null
+  	"id": "string", // Can be integer as well.
+  	"unitIdentifier": "string", // Identification for which unit (sv. "Enhet" / "Område") the staff belongs to. Should be the same as clients
+  }]
+  ```
+</Accordion>
+
+<Accordion title="Hämta alla telefonnummer för personal">
+  Eldra synkar telefonnummer för personal från systemet varje natt. På så sätt kan all personal alltid få kontakt och hjälp av Eldra. 
+
+  Vi skiljer på endpointsen för att hämta personal, och telefonnummer för personal, då dom flesta hemtjänstutförarna jobbar med en pool av telefoner som man tar när man börjar jobba. Därför håller vi en lista över både personal, och en lista över telefonnummer. Om ert system alltid kopplar 1-1 mellan personal och nummer kan vi hantera allt i ett anrop till ert system
+
+  Vi förväntar oss en lista tillbaka med följande data (namnen på attributen kan skilja sig):
+
+  ```
+  [{
+  	"phonenumber": "string",
+  	"unitIdentifier": "string", // Identification for which unit (sv. "Enhet" / "Område") the client belongs to. 
+  }]
+  ```
 </Accordion>
 
 ## Datastruktur
