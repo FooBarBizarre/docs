@@ -90,7 +90,7 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
   Vi förväntar oss att kunna hämta materialet som filer eller text, via API-anrop eller nedladdningsbara länkar.
 </Accordion>
 
-**För djupare integrationer där även anhöriga och personal ska kunna ringas krävs följande gränssnitt:**
+För djupare integrationer där även anhöriga och personal ska kunna ringas krävs följande gränssnitt:
 
 <Accordion title="Hämta alla anhöriga">
   Eldra synkar anhöriga från systemet varje natt. På så sätt kan anhöriga till kunder alltid få rätt information.
@@ -102,8 +102,10 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
   	"name": "string", // Can be firstName, lastName as well
   	"phonenumber": "string",
   	"id": "string", // Can be integer as well.
-  	"clientIds": [""], // Which client / clients they are a relative of. Can be integer as well.
-  	"relationship": "string" // How they are related to the client. Not required to exists
+  	"clients": [{
+  		"id": "string", // can be integer as well,
+  		"relationship": "string" // How they are related to the client. Not required to exists
+  	}], // Which client / clients they are a relative of, and how. Can be integer for id as well.
   }]
   ```
 </Accordion>
