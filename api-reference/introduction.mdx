@@ -83,8 +83,6 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
 </Accordion>
 
 <Accordion title="Hämta kunskapsbas">
-  
-
   Under samtal med personal kan Eldra svara på frågor om era rutiner och processer.
 
   Exempelvis vad man gör om ingen öppnar dörren, hur man hanterar en punktering – eller hur man sjukanmäler sig.
@@ -104,7 +102,7 @@ För att underlätta vardagen för personalen kan Eldra också anropa följande 
   	"name": "string", // Can be firstName, lastName as well
   	"phonenumber": "string",
   	"id": "string", // Can be integer as well.
-  	"clientId": "string" // Which client they are a relative of. Can be integer as well
+  	"clientId": "string" | [""] // Which client / clients they are a relative of. Can be integer as well. Can be number/string or array of number/string
   	"relationship": "string" // How they are related to the client. Not required to exists
   }]
   ```
