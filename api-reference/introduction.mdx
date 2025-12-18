@@ -145,6 +145,54 @@ För djupare integrationer där även anhöriga och personal ska kunna ringas kr
 
 Om ert system har en kunskapsbank som kan tillfrågas i naturellt språk kan vi anropa det direkt i samtal för personalen. Då behöver vi nedan gränssnitt:
 
+<Accordion title="Fråga kunskapsbas (genom LLM)">
+  Under ett samtal med personal kan Eldra hämta information från er existerande kunskapsbank. I detta gränssnitt antas att det ligger en LLM mellan vår fråga och datan som ska sökas
+
+  Följande data skickas in:
+
+  ```
+  {
+  	"query": "string" // the query of the user
+  	"unitIdentifier": "string" // the identifier of the staffs unit, if applicable
+  }
+  ```
+
+  Förväntat svar:
+
+  ```
+  {
+  	"response": "string" // the LLMs response of its data query
+  }
+  ```
+</Accordion>
+
+<Accordion title="Fråga kunskapsbas (direkt)">
+  Under ett samtal med personal kan Eldra hämta information från er existerande kunskapsbank. I detta gränssnitt antar vi att vi anroper en vector databas och låter därför en LLM förhantera kundens fråga och stycka upp den i flera frågor som passar vektordatabaser.
+
+  Följande data skickas in:
+
+  ```
+  {
+  	"queries": ["string"] // the vector storage queries generated from the user query
+  	"unitIdentifier": "string" // the identifier of the staffs unit, if applicable
+  }
+  ```
+
+  Förväntat svar:
+
+  ```
+  {
+  	"snippets": [{
+  		"documentId": "string", // id of the document where relevent information was found
+  		"body": "string" // the actual content from the document that is relevant
+  		"relevance": number // vector storage queries score of how relevant the document was
+  	}]
+  }
+  ```
+
+  Vår LLM kommer sedan hantera svaret och ge ett svar till personalen. 
+</Accordion>
+
 ## Datastruktur
 
 <Info>
